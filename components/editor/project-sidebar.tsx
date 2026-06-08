@@ -34,6 +34,7 @@ export function ProjectSidebar({
   return (
     <aside
       aria-hidden={!isOpen}
+      inert={!isOpen}
       className={cn(
         "fixed bottom-4 left-4 top-16 z-40 flex w-[min(20rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-surface-border bg-sidebar/95 shadow-2xl shadow-base/60 backdrop-blur transition-all duration-200",
         isOpen

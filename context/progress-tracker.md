@@ -20,6 +20,7 @@ Update this file whenever the current phase, active feature, or implementation s
 - Added editor navbar with sidebar toggle sections.
 - Added floating project sidebar with tabs, placeholders, close action, and new project action.
 - Added reusable editor dialog content pattern with title, description, and footer slots.
+- Added inert closed state to the floating project sidebar for keyboard accessibility.
 
 ## In Progress
 
@@ -41,3 +42,4 @@ Update this file whenever the current phase, active feature, or implementation s
 
 - Design system implementation verified with `npm run lint` and `npm run build`.
 - Editor chrome implementation verified with `npm run lint` and `npm run build`.
+- Project sidebar accessibility fix verified with `npm run lint` and `npm run build`.
