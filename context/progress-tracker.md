@@ -4,11 +4,11 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Current Phase
 
-- Foundation setup
+- Editor chrome
 
 ## Current Goal
 
-- Design system and UI primitive components are implemented from `context/feature-specs/01-design-system.md`.
+- Editor chrome from `context/feature-specs/02-editor.md` is implemented and verified.
 
 ## Completed
 
@@ -17,6 +17,9 @@ Update this file whenever the current phase, active feature, or implementation s
 - Installed Lucide React and class merge utilities.
 - Added Ghost AI dark theme tokens in `app/globals.css`.
 - Added reusable `cn()` helper in `lib/utils.ts`.
+- Added editor navbar with sidebar toggle sections.
+- Added floating project sidebar with tabs, placeholders, close action, and new project action.
+- Added reusable editor dialog content pattern with title, description, and footer slots.
 
 ## In Progress
 
@@ -37,3 +40,4 @@ Update this file whenever the current phase, active feature, or implementation s
 ## Session Notes
 
 - Design system implementation verified with `npm run lint` and `npm run build`.
+- Editor chrome implementation verified with `npm run lint` and `npm run build`.
