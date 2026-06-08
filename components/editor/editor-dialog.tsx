@@ -44,9 +44,11 @@ export function EditorDialogContent({
         ) : null}
       </DialogHeader>
 
-      {children ? <div className="text-sm text-copy-secondary">{children}</div> : null}
+      {children !== null && children !== undefined ? (
+        <div className="text-sm text-copy-secondary">{children}</div>
+      ) : null}
 
-      {footer ? (
+      {footer !== null && footer !== undefined ? (
         <DialogFooter className="-mx-6 -mb-6 border-surface-border bg-surface p-4">
           {footer}
         </DialogFooter>
