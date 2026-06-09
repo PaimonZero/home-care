@@ -4,11 +4,11 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Current Phase
 
-- Editor chrome
+- Authentication
 
 ## Current Goal
 
-- Editor chrome from `context/feature-specs/02-editor.md` is implemented and verified.
+- Clerk authentication from `context/feature-specs/03-auth.md` is implemented and verified.
 
 ## Completed
 
@@ -21,6 +21,15 @@ Update this file whenever the current phase, active feature, or implementation s
 - Added floating project sidebar with tabs, placeholders, close action, and new project action.
 - Added reusable editor dialog content pattern with title, description, and footer slots.
 - Added inert closed state to the floating project sidebar for keyboard accessibility.
+- Installed `@clerk/ui` for Clerk dark theme support.
+- Wrapped the root layout in `ClerkProvider` with the Clerk dark theme and app CSS variable appearance overrides.
+- Added Clerk sign-in and sign-up pages with a minimal two-panel desktop layout and form-only mobile layout.
+- Updated the auth pages to use a 50/50 desktop split with a token-based colored left panel, feature rows, and bottom copyright text.
+- Applied Geist Sans explicitly at the root body and Clerk appearance layer to match the UI typography guidelines.
+- Added root `proxy.ts` with protected-by-default Clerk route protection, public auth routes, and a public root redirect route.
+- Updated `/` to redirect authenticated users to `/editor` and unauthenticated users to `/sign-in`.
+- Added Clerk `UserButton` to the editor navbar.
+- Added an `/editor` route that renders the existing editor chrome.
 
 ## In Progress
 
@@ -43,3 +52,4 @@ Update this file whenever the current phase, active feature, or implementation s
 - Design system implementation verified with `npm run lint` and `npm run build`.
 - Editor chrome implementation verified with `npm run lint` and `npm run build`.
 - Project sidebar accessibility fix verified with `npm run lint` and `npm run build`.
+- Auth implementation verified with `npm run lint` and `npm run build`.
