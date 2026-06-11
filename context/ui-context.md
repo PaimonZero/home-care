@@ -2,9 +2,11 @@
 
 ## Theme
 
-Dark only. No light mode. The visual language is a dark technical workspace — near-black backgrounds, layered surfaces, and vivid accent colors for interactive elements.
+Dark mode is the default. Light mode is optional and user-selectable. The visual language remains a technical workspace in both modes: dark uses near-black backgrounds and layered surfaces; light uses cool, low-glare surfaces with clear borders and restrained contrast.
 
-All colors are defined as CSS custom properties in `globals.css` and mapped to Tailwind tokens via `@theme inline`. Components must use these tokens — no hardcoded hex values or raw Tailwind color classes like `zinc-*`.
+All colors are defined as CSS custom properties in `globals.css` and mapped to Tailwind tokens via `@theme inline`. Components must use these tokens - no hardcoded hex values or raw Tailwind color classes like `zinc-*`.
+
+### Dark Mode Tokens
 
 | Role             | CSS Variable           | Hex / Value               |
 | ---------------- | ---------------------- | ------------------------- |
@@ -18,15 +20,39 @@ All colors are defined as CSS custom properties in `globals.css` and mapped to T
 | Secondary text   | `--text-secondary`     | `#c0c0cc`                 |
 | Muted text       | `--text-muted`         | `#808090`                 |
 | Faint text       | `--text-faint`         | `#505060`                 |
-| Brand accent     | `--accent-primary`     | `#00c8d4` (cyan)          |
+| Brand accent     | `--accent-primary`     | `#00c8d4`                 |
 | Brand dim        | `--accent-primary-dim` | `rgba(0, 200, 212, 0.12)` |
-| AI accent        | `--accent-ai`          | `#6457f9` (indigo-purple) |
+| AI accent        | `--accent-ai`          | `#6457f9`                 |
 | AI text          | `--accent-ai-text`     | `#8b82ff`                 |
 | Error            | `--state-error`        | `#ff4d4f`                 |
 | Success          | `--state-success`      | `#34d399`                 |
 | Warning          | `--state-warning`      | `#fbbf24`                 |
 
+### Light Mode Tokens
+
+| Role             | CSS Variable           | Hex / Value               |
+| ---------------- | ---------------------- | ------------------------- |
+| Page background  | `--bg-base`            | `#f6f8fb`                 |
+| Surface          | `--bg-surface`         | `#ffffff`                 |
+| Elevated surface | `--bg-elevated`        | `#f1f5f9`                 |
+| Subtle surface   | `--bg-subtle`          | `#e8eef5`                 |
+| Default border   | `--border-default`     | `#d6dee8`                 |
+| Subtle border    | `--border-subtle`      | `#c3cedb`                 |
+| Primary text     | `--text-primary`       | `#111827`                 |
+| Secondary text   | `--text-secondary`     | `#374151`                 |
+| Muted text       | `--text-muted`         | `#667085`                 |
+| Faint text       | `--text-faint`         | `#98a2b3`                 |
+| Brand accent     | `--accent-primary`     | `#008f99`                 |
+| Brand dim        | `--accent-primary-dim` | `rgba(0, 143, 153, 0.12)` |
+| AI accent        | `--accent-ai`          | `#574ce8`                 |
+| AI text          | `--accent-ai-text`     | `#5b52d6`                 |
+| Error            | `--state-error`        | `#d92d20`                 |
+| Success          | `--state-success`      | `#039855`                 |
+| Warning          | `--state-warning`      | `#b54708`                 |
+
 Tailwind utility names map to these variables. Use `bg-base`, `bg-surface`, `text-copy-primary`, `text-copy-muted`, `border-surface-border`, `text-brand`, `bg-accent-dim`, etc.
+
+Theme selection is applied on the root `<html>` element with `dark` or `light`. Dark remains the initial default. User selection is persisted in `localStorage`.
 
 ## Typography
 
@@ -39,7 +65,7 @@ Both fonts are loaded via `next/font/google` and applied as CSS variables on the
 
 ## Border Radius
 
-Radius increases with surface depth — smaller for inner elements, larger for outer containers.
+Radius increases with surface depth - smaller for inner elements, larger for outer containers.
 
 | Context           | Class         |
 | ----------------- | ------------- |
@@ -68,18 +94,18 @@ Default node color: `#1F1F1F` with `#EDEDED` text.
 
 ### Edge Style
 
-Smooth-step path with an arrow marker. Default edge color: `#f8fafc`. Stroke width is thin — edges are visually secondary to nodes.
+Smooth-step path with an arrow marker. Default edge color: `#f8fafc`. Stroke width is thin - edges are visually secondary to nodes.
 
 ### Node Shapes
 
 6 supported shapes, defined in `types/canvas.ts` as `NODE_SHAPES`. Complex shapes (diamond, hexagon, cylinder) are rendered as inline SVGs rather than CSS borders.
 
-- `rectangle` — default general-purpose node
-- `diamond` — decision / gateway
-- `circle` — event / endpoint
-- `pill` — service / process
-- `cylinder` — database / storage
-- `hexagon` — external system / boundary
+- `rectangle` - default general-purpose node
+- `diamond` - decision / gateway
+- `circle` - event / endpoint
+- `pill` - service / process
+- `cylinder` - database / storage
+- `hexagon` - external system / boundary
 
 ### Connection Handles
 
@@ -95,11 +121,11 @@ shadcn/ui on top of Tailwind. No custom design system. Components live in `compo
 
 ## Layout Patterns
 
-- Editor workspace: full-viewport layout — floating sidebar overlay on the left, center canvas, slide-over AI sidebar on the right.
+- Editor workspace: full-viewport layout - floating sidebar overlay on the left, center canvas, slide-over AI sidebar on the right.
 - Sidebars: floating overlay with dark semi-transparent background and subtle border.
 - Modals and dialogs: centered overlay, `rounded-3xl`, dark background with backdrop blur.
 - Navbar: top bar with dark background and bottom border.
 
 ## Icons
 
-Lucide React. Stroke-based icons only — no filled variants. Icon sizes: `h-4 w-4` for inline, `h-5 w-5` for buttons, `h-8 w-8` for feature icons in empty states.
+Lucide React. Stroke-based icons only - no filled variants. Icon sizes: `h-4 w-4` for inline, `h-5 w-5` for buttons, `h-8 w-8` for feature icons in empty states.

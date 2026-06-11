@@ -3,6 +3,7 @@
 import { UserButton } from "@clerk/nextjs"
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react"
 
+import { ThemeToggle } from "@/components/theme/theme-toggle"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -39,7 +40,8 @@ export function EditorNavbar({
 
       <div className="flex min-w-0 flex-1 items-center justify-center" />
 
-      <div className="flex min-w-0 flex-1 items-center justify-end">
+      <div className="flex min-w-0 flex-1 items-center justify-end gap-2">
+        <ThemeToggle />
         <UserButton />
       </div>
     </header>
